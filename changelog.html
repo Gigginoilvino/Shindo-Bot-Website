@@ -176,18 +176,41 @@
      images is optional — leave it as [] if there aren't any.
      Newest entry should go at the TOP of the array.
   ============================================================= */
-  const CHANGELOG_ENTRIES = [
-    {
-      version: "v1.0.0 — Launch",
-      date: "Coming soon",
-      points: [
-        "Initial release with spawn alerts and item subscriptions",
-        "Private server code lookup via /servers",
-        "Per-server admin configuration"
-      ],
-      images: []
-    }
-  ];
+ const CHANGELOG_ENTRIES = [
+  {
+    version: "v1.0.0 (RELEASE!)",
+    date: "06 August 2026",
+    points: [
+      "Spawn Alert Bot — Release Log",
+      "New Features",
+      "Initial public release of Spawn Alert Bot.",
+      "Automatic notifications for every timed scroll spawn in Shindo Life (5 minutes before spawn).",
+      "Alerts include the Private Server code for the village where the item spawns.",
+      "Browse available Private Server codes at any time with /servers village:[...].",
+      "Subscribe to specific items and receive a ping only when they spawn.",
+      "Personalized item notifications to avoid unnecessary pings.",
+      "Community boss drop reporting through the /drop command.",
+      "Optional role pings for submitted boss drops.",
+      "Every item is displayed using its own custom PNG.",
+      "Officially verified Discord bot.",
+      "Support for multiple villages and their corresponding Private Server codes.",
+      "Built with future expansion in mind.",
+      "Fixes & Patches",
+      "Fixed configuration issues caused by global-to-local asset saves.",
+      "Fixed a bug causing duplicate notification messages.",
+      "Increased maximum supported subscribers to 150 pings per item.",
+      "Fixed image permission issues and /drop image upload bugs.",
+      "Added missing scroll PNG assets.",
+      "Fixed the channel ID directory issue.",
+      "Coming Soon",
+      "Roblox client integration to automatically detect timed drops and publish Private Server codes.",
+      "Community-driven build database featuring recommended builds and current meta.",
+      "Additional quality-of-life improvements and notification features.",
+      "More features based on community feedback."
+    ],
+    images: []
+  }
+];
   /* ============================================================ */
 
   const entriesEl = document.getElementById('entries');
