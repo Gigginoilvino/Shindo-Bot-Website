@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spawn Alert Bot — Terms of Service &amp; Privacy Policy</title>
+<style>
+  :root{
+    --ink:#14181f;
+    --ink-soft:#333c4d;
+    --paper:#f6f5f1;
+    --panel:#ffffff;
+    --line:#c9c5b8;
+    --accent:#1f3c5c;
+    --accent-soft:#e2e9f1;
+    --warn:#7a2e20;
+    --warn-bg:#f7ece8;
+    --good:#1f4636;
+    --good-bg:#e4f0ea;
+    --mono:#3d4136;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 120px;}
+  header.top{
+    padding:56px 0 28px;
+    border-bottom:2px solid var(--ink);
+  }
+  .eyebrow{
+    font-family:"Courier New",monospace;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--mono);
+    margin:0 0 10px;
+  }
+  h1{
+    font-size:2.2rem;
+    margin:0 0 10px;
+    letter-spacing:-.01em;
+  }
+  .sub{
+    font-family:"Courier New",monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  nav.toc{
+    margin:32px 0 44px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 22px;
+  }
+  nav.toc p{margin:0 0 8px;font-family:"Courier New",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mono);}
+  nav.toc ol{margin:0;padding-left:20px;columns:2;column-gap:24px;font-size:14.5px;}
+  nav.toc li{margin-bottom:5px;break-inside:avoid;}
+  nav.toc a{color:var(--accent);text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline;}
+
+  .doc-heading{
+    display:flex;align-items:baseline;gap:14px;
+    margin:64px 0 4px;
+  }
+  .doc-heading h2{
+    font-size:1.55rem;margin:0;
+  }
+  .doc-heading .tag{
+    font-family:"Courier New",monospace;
+    font-size:11px;color:var(--accent);
+    border:1px solid var(--accent);
+    padding:2px 8px;border-radius:20px;
+    letter-spacing:.06em;
+  }
+  .doc-intro{color:var(--ink-soft);font-size:15px;margin:0 0 8px;}
+
+  section.clause{
+    margin-top:34px;
+    scroll-margin-top:20px;
+  }
+  section.clause h3{
+    font-size:1.05rem;
+    margin:0 0 10px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
+  section.clause .num{
+    font-family:"Courier New",monospace;
+    color:var(--accent);
+    margin-right:8px;
+  }
+  section.clause p{margin:0 0 12px;font-size:15.5px;}
+  section.clause ul{margin:0 0 12px;padding-left:22px;}
+  section.clause li{margin-bottom:6px;font-size:15.5px;}
+
+  .callout{
+    border-left:3px solid var(--accent);
+    background:var(--accent-soft);
+    padding:14px 18px;
+    border-radius:0 6px 6px 0;
+    font-size:14.5px;
+    margin:14px 0;
+  }
+  .callout.warn{border-color:var(--warn);background:var(--warn-bg);}
+  .callout.good{border-color:var(--good);background:var(--good-bg);}
+  .callout strong{display:block;font-family:"Courier New",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
+
+  hr.split{border:none;border-top:2px solid var(--ink);margin:80px 0 0;}
+
+  .accept-bar{
+    position:sticky;bottom:0;left:0;right:0;
+    margin-top:70px;
+    background:var(--panel);
+    border-top:2px solid var(--ink);
+    box-shadow:0 -8px 24px rgba(0,0,0,.06);
+  }
+  .accept-inner{
+    max-width:820px;margin:0 auto;padding:20px 24px;
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  }
+  .accept-inner label{
+    display:flex;align-items:flex-start;gap:10px;
+    font-size:14px;color:var(--ink-soft);flex:1;min-width:240px;
+    cursor:pointer;
+  }
+  .accept-inner input[type=checkbox]{
+    width:18px;height:18px;margin-top:2px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;
+  }
+  button#acceptBtn{
+    font-family:"Courier New",monospace;
+    letter-spacing:.04em;
+    background:var(--ink);color:#fff;border:none;
+    padding:13px 26px;border-radius:5px;font-size:13px;
+    cursor:not-allowed;opacity:.45;transition:opacity .15s;
+  }
+  button#acceptBtn.ready{cursor:pointer;opacity:1;background:var(--accent);}
+  button#acceptBtn.ready:hover{background:#1e3a56;}
+  .status-msg{
+    max-width:820px;margin:0 auto;padding:0 24px 14px;
+    font-family:"Courier New",monospace;font-size:12.5px;color:var(--good);
+    display:none;
+  }
+  .status-msg.show{display:block;}
+  footer.legal-footer{
+    max-width:820px;margin:36px auto 0;padding:0 24px;
+    font-size:12px;color:var(--mono);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Legal · Draft for review</p>
+    <h1>Spawn Alert Bot</h1>
+    <p class="sub">Terms of Service &amp; Privacy Policy — effective August 5, 2026 · maintained by Auxcord (lead developer: @aux_ie) · contact leon.nucera@gmail.com</p>
+    <p style="margin:14px 0 0;"><a href="changelog.html" style="font-family:'Courier New',monospace;font-size:12.5px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;">→ View the update changelog</a></p>
+  </header>
+
+  <nav class="toc">
+    <p>Jump to</p>
+    <ol>
+      <li><a href="#tos-1">Acceptance of terms</a></li>
+      <li><a href="#tos-2">What the bot does</a></li>
+      <li><a href="#tos-3">Who can use it</a></li>
+      <li><a href="#tos-4">Discord platform compliance</a></li>
+      <li><a href="#tos-5">What the bot will never do</a></li>
+      <li><a href="#tos-6">Scope &amp; future features</a></li>
+      <li><a href="#tos-7">Administrative override</a></li>
+      <li><a href="#tos-8">Message volume &amp; flooding</a></li>
+      <li><a href="#tos-9">User-submitted content</a></li>
+      <li><a href="#tos-10">Shindo Life / IP disclaimer</a></li>
+      <li><a href="#tos-11">No warranty</a></li>
+      <li><a href="#tos-12">Limitation of liability</a></li>
+      <li><a href="#tos-13">Indemnification</a></li>
+      <li><a href="#tos-14">Suspension &amp; termination</a></li>
+      <li><a href="#tos-15">Changelog</a></li>
+      <li><a href="#tos-16">Changes to these terms</a></li>
+      <li><a href="#tos-17">Governing law</a></li>
+      <li><a href="#pp-1">Privacy: what we collect</a></li>
+      <li><a href="#pp-2">Privacy: how it's used</a></li>
+      <li><a href="#pp-3">Privacy: sharing &amp; Discord</a></li>
+      <li><a href="#pp-4">Privacy: retention &amp; deletion</a></li>
+      <li><a href="#pp-5">Privacy: security</a></li>
+      <li><a href="#pp-6">Privacy: your rights</a></li>
+      <li><a href="#pp-7">Privacy: children</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ TERMS OF SERVICE ============ -->
+  <div class="doc-heading">
+    <h2>Terms of Service</h2>
+    <span class="tag">Document 1</span>
+  </div>
+  <p class="doc-intro">Governs your use of Spawn Alert Bot ("the Bot") on Discord. By adding the Bot to a server, or by using its commands, you agree to these terms on behalf of yourself and, if you're a server admin, on behalf of that server.</p>
+
+  <section class="clause" id="tos-1">
+    <h3><span class="num">1.</span>Acceptance of terms</h3>
+    <p>Adding the Bot to a Discord server, or interacting with any of its commands, means the server owner/admin who added it and each user who runs a command accept these Terms and the accompanying Privacy Policy in full. If you don't agree, remove the Bot from your server and stop using its commands.</p>
+  </section>
+
+  <section class="clause" id="tos-2">
+    <h3><span class="num">2.</span>What the bot does</h3>
+    <p>The Bot tracks item spawn timers for the game Shindo Life and posts automated alerts in a channel you designate, along with related utility commands (subscriptions, private-server code lookups, boss-drop reporting, and similar). It is provided free of charge, as a convenience tool, with no guarantee of accuracy, uptime, or continued availability.</p>
+  </section>
+
+  <section class="clause" id="tos-3">
+    <h3><span class="num">3.</span>Who can use it</h3>
+    <p>You must meet Discord's own minimum age requirement (currently 13, or higher where required by local law) and be permitted to use Discord under its Terms of Service. Server admins are responsible for confirming their server's use of the Bot complies with Discord's rules and with any age restrictions that apply to their community.</p>
+  </section>
+
+  <section class="clause" id="tos-4">
+    <h3><span class="num">4.</span>Discord platform compliance</h3>
+    <p>The Bot operates as a third-party application built on Discord's API and is bound by, and operated in accordance with, Discord's <a href="https://discord.com/terms" target="_blank" rel="noopener">Terms of Service</a>, <a href="https://discord.com/guidelines" target="_blank" rel="noopener">Community Guidelines</a>, <a href="https://discord.com/developers/docs/policies-and-agreements/developer-policy" target="_blank" rel="noopener">Developer Policy</a>, and <a href="https://discord.com/developers/docs/policies-and-agreements/developer-terms-of-service" target="_blank" rel="noopener">Developer Terms of Service</a>. Where anything in this document conflicts with those, Discord's own policies control. The Bot is not created by, affiliated with, or endorsed by Discord Inc.</p>
+  </section>
+
+  <section class="clause" id="tos-5">
+    <h3><span class="num">5.</span>What the bot will never do</h3>
+    <div class="callout good">
+      <strong>Commitment to server safety</strong>
+      This is a standing, non-negotiable limit on the Bot's design — not a feature that can be toggled on later, by request or otherwise.
+    </div>
+    <p>The Bot will never include, and its operators will never add, any feature that:</p>
+    <ul>
+      <li>Mass-messages, mass-mentions, mass-DMs, or otherwise floods a server or its members outside of the Bot's stated alert functions;</li>
+      <li>Mass-creates, mass-deletes, or mass-modifies channels, roles, or messages ("raid" tooling of any kind);</li>
+      <li>Is designed to disrupt, degrade, or damage a server's operation or its members' experience;</li>
+      <li>Harvests member data beyond what's needed for the Bot's documented features (see the Privacy Policy).</li>
+    </ul>
+    <p>If a future update is ever found to violate this clause, that update will be treated as a bug, rolled back, and disclosed in the changelog — not defended as an intended feature.</p>
+  </section>
+
+  <section class="clause" id="tos-6">
+    <h3><span class="num">6.</span>Scope &amp; future features</h3>
+    <p>The Bot's command set may expand beyond its original spawn-alert purpose over time. Any new command or feature will always relate to Shindo Life (e.g. other in-game utilities, event tools, community features) and will always remain subject to Section 5 above. The Bot will not be repurposed into a general-purpose or unrelated-game bot without a new, clearly communicated version of these Terms.</p>
+  </section>
+
+  <section class="clause" id="tos-7">
+    <h3><span class="num">7.</span>Administrative override</h3>
+    <p>The development team (global admins, as defined in the Bot's configuration) may remotely access or take control of the Bot's behavior inside any server it is installed in, at any time, but <strong>only</strong> for one of these two reasons:</p>
+    <ul>
+      <li><strong>Emergency or scheduled maintenance</strong> — e.g. taking the Bot offline, pausing alerts, or making configuration changes needed to keep the service stable; or</li>
+      <li><strong>Revoking usage privileges or beta/experimental features</strong> — e.g. disabling a feature that was rolled out to specific servers, or removing access for a server or user found to be abusing the Bot.</li>
+    </ul>
+    <p>This override right does not extend to reading private message content (the Bot does not request the Message Content intent), impersonating users, or taking any action outside those two purposes.</p>
+  </section>
+
+  <section class="clause" id="tos-8">
+    <h3><span class="num">8.</span>Message volume &amp; flooding</h3>
+    <p>Some commands post messages automatically (spawn alerts) or in response to frequent use (e.g. <code>/drop</code>). The Bot's operators are not liable for channel clutter, notification volume, or disruption caused by normal use of these commands. Server admins are strongly encouraged to apply Discord's built-in slowmode to any channel the Bot posts in heavily. Where appropriate, the Bot will make command responses visible only to the user who ran them ("ephemeral" replies) to reduce channel noise — this is applied on a per-command basis as the Bot is updated.</p>
+  </section>
+
+  <section class="clause" id="tos-9">
+    <h3><span class="num">9.</span>User-submitted content</h3>
+    <p>Private server codes and boss-drop reports submitted via commands like <code>/addserver</code> and <code>/drop</code> are provided by users, not verified by the Bot, and posted visibly to other members of the same server. The Bot's operators aren't responsible for the accuracy of a submitted code, for what happens in a private server reached through one, or for content submitted through these commands. Server admins can remove local-admin access from anyone misusing these commands.</p>
+  </section>
+
+  <section class="clause" id="tos-10">
+    <h3><span class="num">10.</span>Shindo Life / intellectual property disclaimer</h3>
+    <p>Spawn Alert Bot is an independent, unofficial fan tool. It is not affiliated with, endorsed by, or sponsored by RELL World or the developers of Shindo Life, or by Roblox Corporation. Item names, images, and other in-game references are used solely to identify the corresponding in-game content for informational purposes. All trademarks belong to their respective owners. Any item thumbnail images used are supplied by the Bot's operators/community at their own discretion; if a rights holder objects to specific imagery, the operators will remove it on request.</p>
+  </section>
+
+  <section class="clause" id="tos-11">
+    <h3><span class="num">11.</span>No warranty</h3>
+    <p>The Bot is provided "as is" and "as available," without warranties of any kind, express or implied — including accuracy of spawn timers, uptime, fitness for a particular purpose, or that the service will be uninterrupted or error-free. Spawn data is community-sourced and may be wrong, outdated, or affected by in-game changes outside the operators' control.</p>
+  </section>
+
+  <section class="clause" id="tos-12">
+    <h3><span class="num">12.</span>Limitation of liability</h3>
+    <p>To the fullest extent permitted by law, the Bot's developers and operators are not liable for any indirect, incidental, or consequential damages arising from use of, or inability to use, the Bot — including missed spawns, moderation action taken against a server or user as a result of Bot use, lost data, or disruption caused by third parties. This limitation applies whether the claim is based on contract, tort, or any other legal theory, and applies even if the operators were advised of the possibility of such damages.</p>
+  </section>
+
+  <section class="clause" id="tos-13">
+    <h3><span class="num">13.</span>Indemnification</h3>
+    <p>You agree to indemnify and hold harmless the Bot's developers and operators from any claim, liability, or expense (including reasonable legal fees) arising from your misuse of the Bot, your violation of these Terms, or your violation of Discord's own Terms of Service or Community Guidelines while using the Bot.</p>
+  </section>
+
+  <section class="clause" id="tos-14">
+    <h3><span class="num">14.</span>Suspension &amp; termination</h3>
+    <p>The operators may suspend or revoke a server's or user's access to the Bot's features at any time, for any reason connected to abuse, violation of these Terms, or a request from Discord itself, without prior notice where circumstances require it. A server admin may remove the Bot at any time, which ends these Terms as they apply to that server.</p>
+  </section>
+
+  <section class="clause" id="tos-15">
+    <h3><span class="num">15.</span>Changelog</h3>
+    <p>New features, updates, and patches are recorded in a public changelog, published at the #changelog channel in the Auxcord support server, and pinned via /help. Material changes to what the Bot does are expected to appear there rather than being silently introduced.</p>
+  </section>
+
+  <section class="clause" id="tos-16">
+    <h3><span class="num">16.</span>Changes to these terms</h3>
+    <p>These Terms may be updated as the Bot changes. Continued use of the Bot after an update takes effect counts as acceptance of the revised Terms. Material changes will be noted in the changelog referenced above.</p>
+  </section>
+
+  <section class="clause" id="tos-17">
+    <h3><span class="num">17.</span>Governing law &amp; contact</h3>
+    <p>These Terms are governed by the laws of Italy, without regard to conflict-of-law principles, except where Discord's own agreements require otherwise for platform-related disputes. Questions about these Terms can be sent to leon.nucera@gmail.com.</p>
+  </section>
+
+  <hr class="split">
+
+  <!-- ============ PRIVACY POLICY ============ -->
+  <div class="doc-heading">
+    <h2>Privacy Policy</h2>
+    <span class="tag">Document 2</span>
+  </div>
+  <p class="doc-intro">Explains what data Spawn Alert Bot collects, why, and what you can do about it.</p>
+
+  <section class="clause" id="pp-1">
+    <h3><span class="num">1.</span>What we collect</h3>
+    <p>The Bot does not request Discord's Message Content, Presence, or Server Members privileged intents, and does not read your chat messages. It stores only what its features need to function:</p>
+    <ul>
+      <li><strong>Discord IDs</strong> — your user ID (for subscriptions and admin checks) and server/channel IDs (for routing alerts);</li>
+      <li><strong>Command inputs</strong> — the item you subscribed to, a submitted server code, a boss-drop report you post, or an event toggle you set;</li>
+      <li><strong>Per-server configuration</strong> — alert channel, drop channel, local admin roles, event flags, and similar settings a server admin configures.</li>
+    </ul>
+    <p>We don't collect your email, IP address, payment information, or anything beyond what Discord's own API exposes for the interactions above.</p>
+  </section>
+
+  <section class="clause" id="pp-2">
+    <h3><span class="num">2.</span>How it's used</h3>
+    <p>Data is used strictly to run the features you or your server admin turned on: sending you a subscribed-item ping, posting alerts in the configured channel, showing private-server codes for the right village, and enforcing who can run admin commands. It is not used for advertising, profiling, or any purpose outside operating the Bot.</p>
+  </section>
+
+  <section class="clause" id="pp-3">
+    <h3><span class="num">3.</span>Sharing &amp; Discord</h3>
+    <p>We don't sell or share your data with third parties. Because the Bot runs on Discord's platform, the data it processes is necessarily also visible to Discord Inc. under its own <a href="https://discord.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>. Server codes and drop reports you submit through commands are visible to other members of that server by design — don't post anything there you wouldn't want the server to see.</p>
+  </section>
+
+  <section class="clause" id="pp-4">
+    <h3><span class="num">4.</span>Retention &amp; deletion</h3>
+    <p>Subscription and configuration data is kept for as long as you remain subscribed, or the server keeps the Bot installed. Removing the Bot from a server deletes that server's configuration on its next data cleanup cycle. You can ask to have your personal data (e.g. your subscriptions) deleted at any time by contacting leon.nucera@gmail.com or by unsubscribing yourself via <code>/unsubscribe</code>.</p>
+  </section>
+
+  <section class="clause" id="pp-5">
+    <h3><span class="num">5.</span>Security</h3>
+    <p>Data is stored in the Bot's own configuration files on infrastructure controlled by its operators. We take reasonable steps to keep this data restricted to the Bot's operators, but — as with any small, independently run service — we can't guarantee absolute security, and you should not treat anything submitted through the Bot's commands as confidential.</p>
+  </section>
+
+  <section class="clause" id="pp-6">
+    <h3><span class="num">6.</span>Your rights</h3>
+    <p>You can view your own subscriptions with <code>/mysubs</code>, remove them with <code>/unsubscribe</code>, and request a copy or deletion of any data tied to your Discord ID by contacting leon.nucera@gmail.com. Server admins can remove server-level data (codes, channel settings) directly via the Bot's admin commands, or by removing the Bot.</p>
+  </section>
+
+  <section class="clause" id="pp-7">
+    <h3><span class="num">7.</span>Children's privacy</h3>
+    <p>The Bot follows Discord's own minimum age policy (currently 13+) and does not knowingly collect data from users below that age beyond what Discord's platform itself already requires for account creation.</p>
+  </section>
+
+  <p style="margin-top:40px;font-size:13px;color:var(--ink-soft);">Last updated: August 5, 2026. Questions: leon.nucera@gmail.com.</p>
+</div>
+
+<div class="accept-bar">
+  <div class="accept-inner">
+    <label>
+      <input type="checkbox" id="acceptCheck">
+      I have read and accept the Terms of Service and Privacy Policy above.
+    </label>
+    <button id="acceptBtn" disabled>Accept &amp; continue</button>
+  </div>
+  <div class="status-msg" id="statusMsg">✓ Acceptance recorded for this session — wire this button up to your own backend to actually log it per-user.</div>
+</div>
+
+<script>
+  const check = document.getElementById('acceptCheck');
+  const btn = document.getElementById('acceptBtn');
+  const status = document.getElementById('statusMsg');
+  check.addEventListener('change', () => {
+    btn.disabled = !check.checked;
+    btn.classList.toggle('ready', check.checked);
+  });
+  btn.addEventListener('click', () => {
+    if (btn.disabled) return;
+    status.classList.add('show');
+    btn.textContent = 'Accepted ✓';
+    btn.disabled = true;
+    btn.classList.remove('ready');
+  });
+</script>
+</body>
+</html>

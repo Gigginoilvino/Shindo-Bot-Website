@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spawn Alert Bot — Changelog</title>
+<style>
+  :root{
+    --ink:#14181f;
+    --ink-soft:#333c4d;
+    --paper:#f6f5f1;
+    --panel:#ffffff;
+    --line:#c9c5b8;
+    --accent:#1f3c5c;
+    --accent-soft:#e2e9f1;
+    --good:#1f4636;
+    --good-bg:#e4f0ea;
+    --mono:#3d4136;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 100px;}
+  header.top{padding:56px 0 22px;border-bottom:2px solid var(--ink);}
+  .eyebrow{font-family:"Courier New",monospace;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--mono);margin:0 0 10px;}
+  h1{font-size:2.1rem;margin:0 0 10px;letter-spacing:-.01em;}
+  .sub{font-family:"Courier New",monospace;font-size:13px;color:var(--ink-soft);margin:0;}
+  .backlink{font-family:"Courier New",monospace;font-size:12.5px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;}
+
+  .howto{
+    margin:28px 0 40px;background:var(--good-bg);border-left:3px solid var(--good);
+    border-radius:0 6px 6px 0;padding:16px 20px;font-size:14px;
+  }
+  .howto strong{display:block;font-family:"Courier New",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:var(--good);}
+  .howto ol{margin:6px 0 0;padding-left:20px;}
+  .howto li{margin-bottom:4px;}
+
+  .panel{
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:26px 28px;margin-bottom:20px;
+  }
+  .panel h2{margin:0 0 18px;font-size:1.2rem;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-family:"Courier New",monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mono);margin-bottom:6px;}
+  .field input[type=text], .field textarea{
+    width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+    border:1px solid var(--line);border-radius:6px;padding:10px 12px;
+    background:var(--paper);resize:vertical;
+  }
+  .field textarea{min-height:78px;}
+  .field .hint{font-size:12px;color:var(--ink-soft);margin-top:5px;font-family:"Courier New",monospace;}
+  .row2{display:grid;grid-template-columns:2fr 1fr;gap:16px;}
+
+  #imgPreview{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+  #imgPreview img{width:84px;height:84px;object-fit:cover;border-radius:6px;border:1px solid var(--line);}
+
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
+  button{
+    font-family:"Courier New",monospace;letter-spacing:.03em;font-size:13px;
+    border:none;border-radius:6px;padding:12px 22px;cursor:pointer;
+  }
+  #addBtn{background:var(--accent);color:#fff;}
+  #addBtn:hover{background:#162d45;}
+  #exportBtn{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+  #exportBtn:hover{background:var(--ink);color:#fff;}
+
+  #codeOut{
+    display:none;margin-top:16px;background:#12161d;color:#d9e2ec;
+    padding:16px;border-radius:8px;font-family:"Courier New",monospace;
+    font-size:12.5px;white-space:pre-wrap;word-break:break-word;max-height:280px;overflow:auto;
+  }
+  #codeOut.show{display:block;}
+  .copynote{font-size:12px;color:var(--ink-soft);margin-top:8px;display:none;}
+  .copynote.show{display:block;}
+
+  h2.section-title{margin:52px 0 20px;font-size:1.4rem;border-bottom:2px solid var(--ink);padding-bottom:12px;}
+
+  .entry{
+    border:1px solid var(--line);border-radius:10px;background:var(--panel);
+    padding:24px 26px;margin-bottom:22px;position:relative;
+  }
+  .entry .top-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .badge{
+    font-family:"Courier New",monospace;font-size:12px;letter-spacing:.04em;
+    background:var(--accent);color:#fff;padding:4px 12px;border-radius:20px;
+  }
+  .entry .date{font-family:"Courier New",monospace;font-size:12px;color:var(--mono);}
+  .entry h3{margin:8px 0 12px;font-size:1.2rem;}
+  .entry ul{margin:0 0 14px;padding-left:22px;}
+  .entry li{margin-bottom:6px;font-size:15px;}
+  .entry .shots{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+  .entry .shots img{
+    max-width:220px;max-height:150px;border-radius:8px;border:1px solid var(--line);
+    object-fit:cover;cursor:zoom-in;
+  }
+  .removeBtn{
+    position:absolute;top:20px;right:20px;background:none;border:1px solid var(--line);
+    color:var(--ink-soft);font-size:11px;border-radius:20px;padding:5px 12px;
+  }
+  .removeBtn:hover{border-color:var(--ink);color:var(--ink);}
+  .empty{color:var(--ink-soft);font-size:14.5px;font-style:italic;}
+
+  /* lightbox */
+  #lightbox{
+    display:none;position:fixed;inset:0;background:rgba(10,12,16,.86);
+    align-items:center;justify-content:center;z-index:50;cursor:zoom-out;
+  }
+  #lightbox.show{display:flex;}
+  #lightbox img{max-width:90vw;max-height:88vh;border-radius:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Spawn Alert Bot</p>
+    <h1>Update Changelog</h1>
+    <p class="sub">Version history, patch notes, and new feature previews.</p>
+    <p style="margin:14px 0 0;"><a class="backlink" href="index.html">← Back to Terms &amp; Privacy</a></p>
+  </header>
+
+  <div class="howto">
+    <strong>How this page works</strong>
+    Use the form below to draft a new update — it renders live underneath so you can see it styled before it's real.
+    <ol>
+      <li>Fill in the version, date, headpoints (one per line), and any screenshot URLs.</li>
+      <li>Click <strong>Add to changelog</strong> to preview it.</li>
+      <li>Click <strong>Export code</strong> and copy the block it gives you.</li>
+      <li>Paste that block into the <code>CHANGELOG_ENTRIES</code> array near the top of this file's <code>&lt;script&gt;</code>, then re-upload the file to your host. That's what makes an entry permanent for everyone else visiting the page — entries added through the form only live in your browser until you do this.</li>
+    </ol>
+  </div>
+
+  <div class="panel">
+    <h2>Add a new update</h2>
+    <div class="row2">
+      <div class="field">
+        <label for="fVersion">Version title</label>
+        <input type="text" id="fVersion" placeholder="v1.4.0 — Boss Drop Reports">
+      </div>
+      <div class="field">
+        <label for="fDate">Date</label>
+        <input type="text" id="fDate" placeholder="August 2026">
+      </div>
+    </div>
+    <div class="field">
+      <label for="fPoints">Headpoints (one per line)</label>
+      <textarea id="fPoints" placeholder="Added /drop for reporting boss item drops&#10;Fixed spawn timer drifting by a few seconds&#10;New ephemeral replies on /subscribe"></textarea>
+      <p class="hint">Each line becomes its own bullet point.</p>
+    </div>
+    <div class="field">
+      <label for="fImages">Screenshot / feature image URLs (one per line, optional)</label>
+      <textarea id="fImages" placeholder="images/drop-command.png&#10;https://i.imgur.com/example.png"></textarea>
+      <p class="hint">Host images anywhere (Imgur, Discord CDN, or an /images folder next to this file) and paste the link — one per line.</p>
+      <div id="imgPreview"></div>
+    </div>
+    <div class="btnrow">
+      <button id="addBtn">Add to changelog</button>
+      <button id="exportBtn">Export code</button>
+    </div>
+    <div id="codeOut"></div>
+    <p class="copynote" id="copyNote">Copied — paste this into <code>CHANGELOG_ENTRIES</code> in the script below and re-upload.</p>
+  </div>
+
+  <h2 class="section-title">History</h2>
+  <div id="entries"></div>
+</div>
+
+<div id="lightbox"><img id="lightboxImg" src=""></div>
+
+<script>
+  /* ============================================================
+     EDIT BELOW: this is the permanent changelog. Add objects here
+     to publish an update for everyone who visits the page.
+     images is optional — leave it as [] if there aren't any.
+     Newest entry should go at the TOP of the array.
+  ============================================================= */
+  const CHANGELOG_ENTRIES = [
+    {
+      version: "v1.0.0 — Launch",
+      date: "Coming soon",
+      points: [
+        "Initial release with spawn alerts and item subscriptions",
+        "Private server code lookup via /servers",
+        "Per-server admin configuration"
+      ],
+      images: []
+    }
+  ];
+  /* ============================================================ */
+
+  const entriesEl = document.getElementById('entries');
+  const fVersion = document.getElementById('fVersion');
+  const fDate = document.getElementById('fDate');
+  const fPoints = document.getElementById('fPoints');
+  const fImages = document.getElementById('fImages');
+  const imgPreview = document.getElementById('imgPreview');
+  const codeOut = document.getElementById('codeOut');
+  const copyNote = document.getElementById('copyNote');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+
+  function render(){
+    entriesEl.innerHTML = '';
+    if(CHANGELOG_ENTRIES.length === 0){
+      entriesEl.innerHTML = '<p class="empty">No updates logged yet.</p>';
+      return;
+    }
+    CHANGELOG_ENTRIES.forEach((entry, i) => {
+      const div = document.createElement('div');
+      div.className = 'entry';
+      const shots = (entry.images && entry.images.length)
+        ? `<div class="shots">${entry.images.map(src => `<img src="${escapeAttr(src)}" onclick="openLightbox('${escapeAttr(src)}')">`).join('')}</div>`
+        : '';
+      div.innerHTML = `
+        <button class="removeBtn" onclick="removeEntry(${i})">remove</button>
+        <div class="top-row"><span class="badge">${escapeHtml(entry.version)}</span><span class="date">${escapeHtml(entry.date)}</span></div>
+        <ul>${entry.points.map(p => `<li>${escapeHtml(p)}</li>`).join('')}</ul>
+        ${shots}
+      `;
+      entriesEl.appendChild(div);
+    });
+  }
+
+  function escapeHtml(s){
+    return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  }
+  function escapeAttr(s){ return escapeHtml(s); }
+
+  window.removeEntry = function(i){
+    CHANGELOG_ENTRIES.splice(i, 1);
+    render();
+  };
+  window.openLightbox = function(src){
+    lightboxImg.src = src;
+    lightbox.classList.add('show');
+  };
+  lightbox.addEventListener('click', () => lightbox.classList.remove('show'));
+
+  fImages.addEventListener('input', () => {
+    const urls = fImages.value.split('\n').map(s => s.trim()).filter(Boolean);
+    imgPreview.innerHTML = urls.map(u => `<img src="${escapeAttr(u)}">`).join('');
+  });
+
+  document.getElementById('addBtn').addEventListener('click', () => {
+    const version = fVersion.value.trim();
+    const points = fPoints.value.split('\n').map(s => s.trim()).filter(Boolean);
+    if(!version || points.length === 0){
+      alert('Add at least a version title and one headpoint.');
+      return;
+    }
+    const images = fImages.value.split('\n').map(s => s.trim()).filter(Boolean);
+    CHANGELOG_ENTRIES.unshift({
+      version,
+      date: fDate.value.trim() || 'Undated',
+      points,
+      images
+    });
+    fVersion.value = ''; fDate.value = ''; fPoints.value = ''; fImages.value = '';
+    imgPreview.innerHTML = '';
+    codeOut.classList.remove('show');
+    copyNote.classList.remove('show');
+    render();
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    const code = 'const CHANGELOG_ENTRIES = ' + JSON.stringify(CHANGELOG_ENTRIES, null, 2).replace(/"([a-zA-Z]+)":/g, '$1:') + ';';
+    codeOut.textContent = code;
+    codeOut.classList.add('show');
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(code).then(() => {
+        copyNote.classList.add('show');
+      }).catch(() => {});
+    }
+  });
+
+  render();
+</script>
+</body>
+</html>
